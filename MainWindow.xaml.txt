@@ -36,7 +36,6 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
@@ -44,25 +43,10 @@
                         </Grid.RowDefinitions>
 
                         <Border Grid.Row="0" Grid.Column="0" Margin="4,4,3,4" BorderBrush="Black" BorderThickness="1">
-                            <ScrollViewer 
-                                    HorizontalScrollBarVisibility="Auto"
-                                    VerticalScrollBarVisibility="Auto"
-                                    CanContentScroll="True"
-                                    PanningMode="Both">
-                                <Grid x:Name="LauncherControlGrid" Margin="5,5,5,5" />
-                            </ScrollViewer>
+                            <Grid x:Name="LauncherControlGrid" Margin="5,5,5,5" />
                         </Border>
 
-                        <GridSplitter Grid.Column="1"
-                            Width="3"
-                            Background="#FFE5E5E5"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"
-                            ShowsPreview="True"
-                            ResizeBehavior="PreviousAndNext"
-                                      />
-
-                        <Border Grid.Column="2" Grid.Row="0" Margin="3,4,4,4" BorderBrush="Black" BorderThickness="1">
+                        <Border Grid.Column="1" Grid.Row="0" Margin="3,4,4,4" BorderBrush="Black" BorderThickness="1">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />

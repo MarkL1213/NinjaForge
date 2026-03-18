@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Xml.Linq;
 
@@ -41,6 +42,20 @@ namespace NinjaForge
     public class StartupWorkspace
     {
         public string WorkspaceName { get; set; } = string.Empty;
+
+        public string FrameworkSafeName()
+        {
+            if (string.IsNullOrEmpty(WorkspaceName)) return WorkspaceName;
+
+            string name = WorkspaceName;
+
+            if (char.IsDigit(name[0])) name = "N" + name;
+            var allowedChars = name.Where(c =>
+                        char.IsLetterOrDigit(c)
+                        );
+
+            return new string(allowedChars.ToArray());
+        }
     }
 
     public class WorkspaceFile : IDisposable

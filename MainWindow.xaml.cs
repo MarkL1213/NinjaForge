@@ -40,7 +40,7 @@ namespace NinjaForge
             foreach (StartupWorkspace workspace in validWorkspaces)
             {
                 RadioButton rb = new RadioButton();
-                rb.Name = workspace.WorkspaceName.Replace(' ', '_') + "_RadioButton";
+                rb.Name = workspace.FrameworkSafeName() + "_RadioButton";
                 rb.Content = workspace.WorkspaceName;
                 rb.Tag = workspace;
                 rb.GroupName = "Workspaces";
